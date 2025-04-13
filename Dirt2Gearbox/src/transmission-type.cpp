@@ -6,12 +6,15 @@ void Dirt::adjustTransmissionType()
 
 	// Find transmission_type profile entry
 	char* name = nullptr;
-	for (int i = 0; i < 150; ++i)
+	for (int i = 0; i < 130; ++i)
 	{
 		// Each entry is 0x128 long, name is first field
 		char* tmp = reinterpret_cast<char*>(reinterpret_cast<uintptr_t>(profileEntries.deref().GetAddress()) + (i * 0x128));
 		if (strncmp(tmp, "transmission_type", 17) == 0)
+		{
 			name = tmp;
+			break;
+		}
 	}
 
 	if (name == nullptr)
@@ -27,7 +30,8 @@ void Dirt::adjustTransmissionType()
 	// Do this every second in case the controls get changed.
 	while (true)
 	{
-		*transmissionType = 2;
+		if (*transmissionType != 1)
+			*transmissionType = 2;
 		Sleep(1000);
 	}
 }
