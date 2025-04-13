@@ -7,13 +7,14 @@
 class Dirt
 {
 public:
-	static const uint32_t exeNameLength = 14;
-	static const uint32_t base = 0xA20000;
+	uint32_t base = 0;
 	static const uint32_t appAddress = 0x01049C84;
 	static const uint32_t appOffset = 0x90C;
+	static const uint32_t exeNameLength = 14;
+	static const uint32_t profileEntryLength = 0x128;
 
 private:
-	Core::Pointer cmr6App = base + appAddress;
+	Core::Pointer cmr6App = nullptr;
 	void adjustTransmissionType();
 	Core::Pointer locateProfileEntries();
 

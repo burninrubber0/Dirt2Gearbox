@@ -34,6 +34,9 @@ void Dirt::Load()
 {
 	try
 	{
+		base = (uint32_t)GetModuleHandle(0);
+		cmr6App = base + appAddress;
+		
 		while (true)
 		{
 			if (cmr6App.as<void*>() != nullptr)

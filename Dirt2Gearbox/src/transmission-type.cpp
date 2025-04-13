@@ -3,13 +3,15 @@
 void Dirt::adjustTransmissionType()
 {
 	Core::Pointer profileEntries = locateProfileEntries();
+	Core::Pointer entryAfterLast = profileEntries.at(0x4); // _Mylast
+	int numEntries = (entryAfterLast.as<uint32_t>() - profileEntries.as<uint32_t>()) / profileEntryLength;
 
 	// Find transmission_type profile entry
 	char* name = nullptr;
-	for (int i = 0; i < 130; ++i)
+	for (int i = 0; i < numEntries; ++i)
 	{
-		// Each entry is 0x128 long, name is first field
-		char* tmp = reinterpret_cast<char*>(reinterpret_cast<uintptr_t>(profileEntries.deref().GetAddress()) + (i * 0x128));
+		// Name is first field
+		char* tmp = reinterpret_cast<char*>(reinterpret_cast<uintptr_t>(profileEntries.deref().GetAddress()) + (i * profileEntryLength));
 		if (strncmp(tmp, "transmission_type", 17) == 0)
 		{
 			name = tmp;
