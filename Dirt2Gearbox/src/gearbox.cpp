@@ -47,7 +47,7 @@ void Dirt::Load()
 		cmr6App = cmr6App.deref().at(appOffset); // CMR6::Application
 
 		Sleep(20000);
-		adjustTransmissionType();
+		adjustSettings();
 	}
 	catch (const std::exception& e)
 	{

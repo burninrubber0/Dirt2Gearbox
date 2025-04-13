@@ -178,7 +178,7 @@
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="src\gearbox.cpp" />
-    <ClCompile Include="src\transmission-type.cpp" />
+    <ClCompile Include="src\settings.cpp" />
   </ItemGroup>
   <ItemGroup>
     <MASM Include="version\32\version_32.asm">

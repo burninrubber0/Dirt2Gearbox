@@ -44,7 +44,7 @@
     <ClCompile Include="src\gearbox.cpp">
       <Filter>Source Files\src</Filter>
     </ClCompile>
-    <ClCompile Include="src\transmission-type.cpp">
+    <ClCompile Include="src\settings.cpp">
       <Filter>Source Files\src</Filter>
     </ClCompile>
   </ItemGroup>

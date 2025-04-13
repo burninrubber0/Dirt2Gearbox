@@ -15,8 +15,9 @@ public:
 
 private:
 	Core::Pointer cmr6App = nullptr;
-	void adjustTransmissionType();
+	void adjustSettings();
 	Core::Pointer locateProfileEntries();
+	uint8_t* locateSetting(const char* settingName, Core::Pointer profileEntries, int numEntries);
 
 private:
 	Dirt();
