@@ -9,7 +9,7 @@ Adjusts hidden settings for the transmission in Dirt 2:
 
 The clutch input is unmapped or not fully configured on all devices except the Logitech G25. A modified XInput action map file is provided with the release which binds it to clicking the left stick. This was only chosen because the left stick isn't bound to anything else; you are encouraged to set your own bindings.
 
-Because the clutch is not a rebindable input, the default controls from the action map must be used. If changed to custom controls, the clutch input may remain active for the rest of the session, but won't be available upon restarting the game. To permanently change the controls, you **must** edit the action map file.
+Rebinding any controls in-game will cause the clutch to become unmapped after the next game restart. Only presets (stored in the action maps) can bind it. Thus, custom controls must be configured via the action map if you want the clutch to be enabled.
 
 # Installation
 
