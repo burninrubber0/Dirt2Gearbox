@@ -4,7 +4,7 @@ void Dirt::adjustTransmissionType()
 {
 	Core::Pointer profileEntries = locateProfileEntries();
 
-	// Find transmission_type
+	// Find transmission_type profile entry
 	char* name = nullptr;
 	for (int i = 0; i < 150; ++i)
 	{
@@ -20,7 +20,11 @@ void Dirt::adjustTransmissionType()
 		return;
 	}
 
+	// Transmission type value
 	uint8_t* transmissionType = reinterpret_cast<uint8_t*>(name + 0x48);
+
+	// Set the transmission type to manual with manual clutch.
+	// Do this every second in case the controls get changed.
 	while (true)
 	{
 		*transmissionType = 2;
